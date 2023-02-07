@@ -16,37 +16,42 @@
     <div class="caixa-superior">
         <div class="cabecalho">
             <h2 class="titulo-cabecalho">Dev Contábil</h2>
-            <a class="link-cabecalho">Quem somos</a>
-            <a class="link-cabecalho">Serviços</a>
-            <a class="link-cabecalho">Contábil</a>
+            <a href="#titulo-inferior" class="link-cabecalho">Quem somos</a>
+            <a href="#titulo-meio" class="link-cabecalho">Serviços</a>
+            <a class="link-cabecalho" onclick="chameOAbacate()">Contato</a>
         </div>
 
         <h1>Dev Contábil</h1>
 
 
-        <form>
+        <form id="formulario-contato" name="formulario-contato" action="https://formsubmit.co/candangaobr@gmail.com" method="POST">
             <h3 class="titulo-formulario">Entre em contato</h3>
 
             <label>
                 Nome
-                <input placeholder="Digite seu nome">
+                <input type="text" name="nome" placeholder="Digite seu nome" required>
             </label>
 
             <label>
                 E-mail
-                <input placeholder="Digite o seu e-mail">
+                <input type="email" name="email" placeholder="Digite o seu e-mail" required>
+            </label>
+
+            <label>
+                WhatsApp
+                <input type="tel" name="telefone" placeholder="Digite o seu telefone" required>
             </label>
 
             <label>
                 Fale conosco
-                <textarea placeholder="Qual sua dúvida?"></textarea>
+                <textarea name="info" placeholder="Qual sua dúvida?"></textarea>
             </label>
 
-            <button>Enviar</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 
-    <h2 class="titulo-meio">Nossos serviços</h2>
+    <h2 id="titulo-meio">Nossos serviços</h2>
 
     <div class="caixa-central">
         <div class="card">
@@ -86,20 +91,20 @@
         </div>
     </div>
     <div class="caixa-inferior">
-        <h2 class="titulo-inferior">Sobre Nós</h2>
+        <h2 id="titulo-inferior">Sobre Nós</h2>
         <p>
             Estamos presente no mercado há mais de 4 décadas auxiliando nossos clientes nacionais e internacionais que
             já
             atuam ou desejam abrir seus negócios e ingressar no Brasil.
-
+<br>
             Assessoramos investidores que queiram prospectar seus negócios no Brasil e investidores (“brasileiros”)
             interessados em fazer negócios em outros países.
             Oferecemos “backoffice” nas áreas Financeira, Recursos Humanos, Tributária e Contabilidade, inclusive a
             abertura, legalização e regularização de empresas e negócios.
-
+<br>
             Com pesquisas de mercado, montamos toda estrutura organizacional, ambiente operacional e logística de suas
             atividades, com profissionais qualificados, competentes e continuamente treinados.
-
+<br>
             Somos especialistas em empresas tributadas pelo LUCRO REAL e Contabilidade em IFRS. Assim, o Planejamento
             das
             Operações e suas consequências tributárias passam a ser condições de competitividade, inclusive sugerindo
@@ -107,5 +112,14 @@
         </p>
     </div>
 </body>
+<script>
+
+    let formulario = document.getElementById("formulario-contato")
+
+    function chameOAbacate(){
+        formulario.className = "mostrar-formulario"
+    }
+
+</script>
 
 </html>
